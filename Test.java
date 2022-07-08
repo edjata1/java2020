@@ -1,14 +1,7 @@
-public class Test{
-	
-	public void pupAge(){
-		int age = 0;
-		age = age + 7;
-		System.out.println("Puppy age is: " +  age);
-	}
-	
-	public static void main(String args[]){
-		
-		Test test = new Test();
-		test.pupAge();
+class Test {
+	public static void main(String[] args){
+		for (int i = 0; i < args.length; i++)
+			System.out.print(i==0 ? args[i] : " " + args[i]);
+		System.out.println();
 	}
 }

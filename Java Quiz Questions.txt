@@ -1,0 +1,559 @@
+1. Questions and Exercises: Variables
+Questions
+
+    The term "instance variable" is another name for ___.
+    The term "class variable" is another name for ___.
+    A local variable stores temporary state; it is declared inside a ___.
+    A variable declared within the opening and closing parenthesis of a method signature is called a ____.
+    What are the eight primitive data types supported by the Java programming language?
+    Character strings are represented by the class ___.
+    An ___ is a container object that holds a fixed number of values of a single type.
+
+Exercises
+
+    Create a small program that defines some fields. Try creating some illegal field names and see what kind of error the compiler produces. Use the naming rules and conventions as a guide.
+    In the program you created in Exercise 1, try leaving the fields uninitialized and print out their values. Try the same with a local variable and see what kind of compiler errors you can produce. Becoming familiar with common compiler errors will make it easier to recognize bugs in your code.
+
+
+Answers to Questions
+
+    The term "instance variable" is another name for non-static field.
+    The term "class variable" is another name for static field.
+    A local variable stores temporary state; it is declared inside a method.
+    A variable declared within the opening and closing parenthesis of a method is called a parameter.
+    What are the eight primitive data types supported by the Java programming language? byte, short, int, long, float, double, boolean, char
+    Character strings are represented by the class java.lang.String.
+    An array is a container object that holds a fixed number of values of a single type.
+
+
+Questions and Exercises: Operators
+Questions
+
+    Consider the following code snippet.
+
+    arrayOfInts[j] > arrayOfInts[j+1]
+
+    Which operators does the code contain?
+    Consider the following code snippet.
+
+    int i = 10;
+    int n = i++%5;
+
+        What are the values of i and n after the code is executed?
+        What are the final values of i and n if instead of using the postfix increment operator (i++), you use the prefix version (++i))?
+    To invert the value of a boolean, which operator would you use?
+    Which operator is used to compare two values, = or == ?
+    Explain the following code sample: result = someCondition ? value1 : value2;
+
+Exercises
+
+    Change the following program to use compound assignments:
+
+    class ArithmeticDemo {
+
+         public static void main (String[] args){
+              
+              int result = 1 + 2; // result is now 3
+              System.out.println(result);
+
+              result = result - 1; // result is now 2
+              System.out.println(result);
+
+              result = result * 2; // result is now 4
+              System.out.println(result);
+
+              result = result / 2; // result is now 2
+              System.out.println(result);
+
+              result = result + 8; // result is now 10
+              result = result % 7; // result is now 3
+              System.out.println(result);
+         }
+    }
+
+    In the following program, explain why the value "6" is printed twice in a row:
+
+    class PrePostDemo {
+        public static void main(String[] args){
+            int i = 3;
+            i++;
+            System.out.println(i);    // "4"
+            ++i;                     
+            System.out.println(i);    // "5"
+            System.out.println(++i);  // "6"
+            System.out.println(i++);  // "6"
+            System.out.println(i);    // "7"
+        }
+    }
+
+
+2. Answers to Questions and Exercises: Operators
+Answers to Questions
+
+    Consider the following code snippet:
+
+    arrayOfInts[j] > arrayOfInts[j+1]
+
+    Question: What operators does the code contain?
+    Answer: >, +
+
+    Consider the following code snippet:
+
+    int i = 10;
+    int n = i++%5;
+
+        Question: What are the values of i and n after the code is executed?
+        Answer: i is 11, and n is 0.
+
+        Question: What are the final values of i and n if instead of using the postfix increment operator (i++), you use the prefix version (++i))?
+        Answer: i is 11, and n is 1.
+
+    Question: To invert the value of a boolean, which operator would you use?
+    Answer: The logical complement operator "!".
+    Question: Which operator is used to compare two values, = or == ?
+    Answer: The == operator is used for comparison, and = is used for assignment.
+    Question: Explain the following code sample: result = someCondition ? value1 : value2;
+    Answer: This code should be read as: "If someCondition is true, assign the value of value1 to result. Otherwise, assign the value of value2 to result."
+
+Exercises
+
+    Change the following program to use compound assignments:
+
+    class ArithmeticDemo {
+
+        public static void main (String[] args){
+              
+            int result = 1 + 2; // result is now 3
+            System.out.println(result);
+
+            result = result - 1; // result is now 2
+            System.out.println(result);
+
+            result = result * 2; // result is now 4
+            System.out.println(result);
+
+            result = result / 2; // result is now 2
+            System.out.println(result);
+
+            result = result + 8; // result is now 10
+            result = result % 7; // result is now 3
+            System.out.println(result);
+
+        }
+    }
+
+    Here is one solution:
+
+    class ArithmeticDemo {
+
+        public static void main (String[] args){
+            int result = 3;
+            System.out.println(result);
+
+            result -= 1; // result is now 2
+            System.out.println(result);
+
+            result *= 2; // result is now 4
+            System.out.println(result);
+
+            result /= 2; // result is now 2
+            System.out.println(result);
+
+            result += 8; // result is now 10
+            result %= 7; // result is now 3
+            System.out.println(result);
+
+        }
+    }
+
+    In the following program, explain why the value "6" is printed twice in a row:
+
+    class PrePostDemo {
+        public static void main(String[] args){
+            int i = 3;
+            i++;
+            System.out.println(i);    // "4"
+            ++i;                     
+            System.out.println(i);    // "5"
+            System.out.println(++i);  // "6"
+            System.out.println(i++);  // "6"
+            System.out.println(i);    // "7"
+        }
+    }
+
+    The code System.out.println(++i); evaluates to 6, because the prefix version of ++ evaluates to the incremented value. The next line, System.out.println(i++); evaluates to the current value (6), then increments by one. So "7" doesn't get printed until the next line.
+
+3.Questions and Exercises: Expressions, Statements, and Blocks
+Questions
+
+    Operators may be used in building ___, which compute values.
+    Expressions are the core components of ___.
+    Statements may be grouped into ___.
+    The following code snippet is an example of a ___ expression.
+
+     1 * 2 * 3
+
+    Statements are roughly equivalent to sentences in natural languages, but instead of ending with a period, a statement ends with a ___.
+    A block is a group of zero or more statements between balanced ___ and can be used anywhere a single statement is allowed.
+
+Exercises
+
+Identify the following kinds of expression statements:
+
+    aValue = 8933.234;
+    aValue++;
+    System.out.println("Hello World!");
+    Bicycle myBike = new Bicycle();
+Answers to Questions and Exercises: Expressions, Statements, and Blocks
+Questions
+
+    Operators may be used in building expressions, which compute values.
+    Expressions are the core components of statements.
+    Statements may be grouped into blocks.
+    The following code snippet is an example of a compound expression.
+
+     1 * 2 * 3
+
+    Statements are roughly equivalent to sentences in natural languages, but instead of ending with a period, a statement ends with a semicolon.
+    A block is a group of zero or more statements between balanced braces and can be used anywhere a single statement is allowed.
+
+Exercises
+
+Identify the following kinds of expression statements:
+
+    aValue = 8933.234; // assignment statement
+    aValue++; // increment statement
+    System.out.println("Hello World!"); // method invocation statement
+    Bicycle myBike = new Bicycle(); // object creation statement
+
+4. Questions and Exercises: Control Flow Statements
+Questions
+
+    The most basic control flow statement supported by the Java programming language is the ___ statement.
+    The ___ statement allows for any number of possible execution paths.
+    The ___ statement is similar to the while statement, but evaluates its expression at the ___ of the loop.
+    How do you write an infinite loop using the for statement?
+    How do you write an infinite loop using the while statement?
+
+Exercises
+
+    Consider the following code snippet.
+
+    if (aNumber >= 0)
+        if (aNumber == 0)
+            System.out.println("first string");
+    else System.out.println("second string");
+    System.out.println("third string");
+
+        What output do you think the code will produce if aNumber is 3?
+        Write a test program containing the previous code snippet; make aNumber 3. What is the output of the program? Is it what you predicted? Explain why the output is what it is; in other words, what is the control flow for the code snippet?
+        Using only spaces and line breaks, reformat the code snippet to make the control flow easier to understand.
+        Use braces, { and }, to further clarify the code.
+Answers to Questions and Exercises: Control Flow Statements
+Answers to Questions
+
+    The most basic control flow statement supported by the Java programming language is the if-then statement.
+    The switch statement allows for any number of possible execution paths.
+    The do-while statement is similar to the while statement, but evaluates its expression at the bottom of the loop.
+    Question: How do you write an infinite loop using the for statement?
+
+    Answer:
+
+    for ( ; ; ) {
+
+    }
+
+    Question: How do you write an infinite loop using the while statement?
+
+    Answer:
+
+    while (true) {
+
+    }
+
+Exercises
+
+    Consider the following code snippet.
+
+    if (aNumber >= 0)
+        if (aNumber == 0)
+            System.out.println("first string");
+    else 
+        System.out.println("second string");
+    System.out.println("third string");
+
+        Exercise: What output do you think the code will produce if aNumber is 3?
+
+        Solution:
+
+        second string
+        third string
+
+        Exercise: Write a test program containing the previous code snippet; make aNumber 3. What is the output of the program? Is it what you predicted? Explain why the output is what it is. In other words, what is the control flow for the code snippet?
+
+        Solution: NestedIf
+
+        second string
+        third string
+
+        3 is greater than or equal to 0, so execution progresses to the second if statement. The second if statement's test fails because 3 is not equal to 0. Thus, the else clause executes (since it's attached to the second if statement). Thus, second string is displayed. The final println is completely outside of any if statement, so it always gets executed, and thus third string is always displayed.
+        Exercise: Using only spaces and line breaks, reformat the code snippet to make the control flow easier to understand.
+
+        Solution:
+
+        if (aNumber >= 0)
+            if (aNumber == 0)
+                System.out.println("first string");
+            else
+                System.out.println("second string");
+
+        System.out.println("third string");
+
+        Exercise: Use braces { and } to further clarify the code and reduce the possibility of errors by future maintainers of the code.
+
+        Solution:
+
+        if (aNumber >= 0) {
+            if (aNumber == 0) {
+                System.out.println("first string");
+            } else {
+                System.out.println("second string");
+            }
+        }
+
+        System.out.println("third string");
+
+
+
+5. Questions and Exercises: Classes
+Questions
+
+    Consider the following class:
+
+    public class IdentifyMyParts {
+        public static int x = 7; 
+        public int y = 3; 
+    }
+
+        What are the class variables?
+
+        What are the instance variables?
+
+        What is the output from the following code:
+
+        IdentifyMyParts a = new IdentifyMyParts();
+        IdentifyMyParts b = new IdentifyMyParts();
+        a.y = 5;
+        b.y = 6;
+        a.x = 1;
+        b.x = 2;
+        System.out.println("a.y = " + a.y);
+        System.out.println("b.y = " + b.y);
+        System.out.println("a.x = " + a.x);
+        System.out.println("b.x = " + b.x);
+        System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
+
+Exercises
+
+    Write a class whose instances represent a single playing card from a deck of cards. Playing cards have two distinguishing properties: rank and suit. Be sure to keep your solution as you will be asked to rewrite it in Enum Types.
+    Hint: 
+
+    You can use the assert statement to check your assignments. You write:
+
+    assert (boolean expression to test); 
+
+    If the boolean expression is false, you will get an error message. For example,
+
+    assert toString(ACE) == "Ace";
+
+    should return true, so there will be no error message.
+
+    If you use the assert statement, you must run your program with the ea flag:
+
+    java -ea YourProgram.class
+
+    Write a class whose instances represent a full deck of cards. You should also keep this solution.
+
+    3. Write a small program to test your deck and card classes. The program can be as simple as creating a deck of cards and displaying its cards.
+
+
+Answers to Questions and Exercises: Classes
+Questions
+
+    Consider the following class:
+
+    public class IdentifyMyParts {
+        public static int x = 7;
+        public int y = 3;
+    } 
+
+        Question: What are the class variables?
+
+        Answer: x
+
+        Question: What are the instance variables?
+
+        Answer: y
+
+        Question: What is the output from the following code:
+
+        IdentifyMyParts a = new IdentifyMyParts(); 
+        IdentifyMyParts b = new IdentifyMyParts(); 
+        a.y = 5; 
+        b.y = 6; 
+        a.x = 1; 
+        b.x = 2; 
+        System.out.println("a.y = " + a.y); 
+        System.out.println("b.y = " + b.y); 
+        System.out.println("a.x = " + a.x); 
+        System.out.println("b.x = " + b.x); 
+        System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
+
+        Answer: Here is the output:
+
+         a.y = 5 
+         b.y = 6 
+         a.x = 2 
+         b.x = 2
+         IdentifyMyParts.x = 2
+
+        Because x is defined as a public static int in the class IdentifyMyParts, every reference to x will have the value that was last assigned because x is a static variable (and therefore a class variable) shared across all instances of the class. That is, there is only one x: when the value of x changes in any instance it affects the value of x for all instances of IdentifyMyParts.
+
+        This is covered in the Class Variables section of Understanding Instance and Class Members.
+
+Exercises
+
+    Exercise: Write a class whose instances represent a single playing card from a deck of cards. Playing cards have two distinguishing properties: rank and suit. Be sure to keep your solution as you will be asked to rewrite it in Enum Types.
+
+    Answer: Card.java(in a .java source file).
+
+    Exercise: Write a class whose instances represents a full deck of cards. You should also keep this solution.
+
+    Answer: See Deck.java(in a .java source file).
+
+    Exercise: Write a small program to test your deck and card classes. The program can be as simple as creating a deck of cards and displaying its cards.
+
+    Answer: See DisplayDeck.java(in a .java source file).
+
+
+5b. Questions and Exercises: Objects
+Questions
+
+    What's wrong with the following program?
+
+    public class SomethingIsWrong {
+        public static void main(String[] args) {
+            Rectangle myRect;
+            myRect.width = 40;
+            myRect.height = 50;
+            System.out.println("myRect's area is " + myRect.area());
+        }
+    }
+
+    The following code creates one array and one string object. How many references to those objects exist after the code executes? Is either object eligible for garbage collection?
+
+    ...
+    String[] students = new String[10];
+    String studentName = "Peter Parker";
+    students[0] = studentName;
+    studentName = null;
+    ...
+
+    How does a program destroy an object that it creates?
+
+Exercises
+
+    Fix the program called SomethingIsWrong shown in Question 1.
+
+    Given the following class, called NumberHolder, write some code that creates an instance of the class, initializes its two member variables, and then displays the value of each member variable.
+
+    public class NumberHolder {
+        public int anInt;
+        public float aFloat;
+    }
+
+Answers to Questions and Exercises: Objects
+Questions
+
+    Question: What's wrong with the following program?
+
+    public class SomethingIsWrong {
+        public static void main(String[] args) {
+            Rectangle myRect;
+            myRect.width = 40;
+            myRect.height = 50;
+            System.out.println("myRect's area is " + myRect.area());
+        }
+    }
+
+    Answer: The code never creates a Rectangle object. With this simple program, the compiler generates an error. However, in a more realistic situation, myRect might be initialized to null in one place, say in a constructor, and used later. In that case, the program will compile just fine, but will generate a NullPointerException at runtime.
+
+    Question: The following code creates one array and one string object. How many references to those objects exist after the code executes? Is either object eligible for garbage collection?
+
+    ...
+    String[] students = new String[10];
+    String studentName = "Peter Smith";
+    students[0] = studentName;
+    studentName = null;
+    ...
+
+    Answer: There is one reference to the students array and that array has one reference to the string Peter Smith. Neither object is eligible for garbage collection. The array students is not eligible for garbage collection because it has one reference to the object studentName even though that object has been assigned the value null. The object studentName is not eligible either because students[0] still refers to it.
+
+    Question: How does a program destroy an object that it creates?
+
+    Answer: A program does not explicitly destroy objects. A program can set all references to an object to null so that it becomes eligible for garbage collection. But the program does not actually destroy objects.
+
+Exercises
+
+    Exercise: Fix the program called SomethingIsWrong shown in Question 1.
+
+    Answer: See SomethingIsRight:
+
+
+    public class SomethingIsRight {
+        public static void main(String[] args) {
+            Rectangle myRect = new Rectangle();
+            myRect.width = 40;
+            myRect.height = 50;
+            System.out.println("myRect's area is " + myRect.area());
+        }
+    }
+
+    Exercise: Given the following class, called NumberHolder, write some code that creates an instance of the class, initializes its two member variables, and then displays the value of each member variable.
+
+
+    public class NumberHolder {
+        public int anInt;
+        public float aFloat;
+    }
+
+    Answer: See NumberHolderDisplay:
+
+
+    public class NumberHolderDisplay {
+        public static void main(String[] args) {
+    	NumberHolder aNumberHolder = new NumberHolder();
+    	aNumberHolder.anInt = 1;
+    	aNumberHolder.aFloat = 2.3f;
+    	System.out.println(aNumberHolder.anInt);
+    	System.out.println(aNumberHolder.aFloat);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
